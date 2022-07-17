@@ -1,0 +1,5 @@
+FROM postgres
+
+ADD ./bb_db.sql /docker-entrypoint-initdb.d/bb_db.sql
+
+VOLUME psql-bb1:/var/lib/postgresql/data

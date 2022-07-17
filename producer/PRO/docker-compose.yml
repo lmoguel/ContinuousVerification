@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db_pro_8015:
+    image: postgres
+    ports:
+      - 8019:5432
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_DB: pro
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./database/bb_db.sql:/docker-entrypoint-initdb.d/bb_db.sql
+      - psql-pro:/var/lib/postgresql/data
+    restart: always
+  pro_manager_8015:
+    build:
+      context: ./bb_manager
+    ports:
+      - 8018:5000
+    volumes:
+      - catalogs_8015:/home/catalogs/
+      - ./bb_manager/app/:/home/
+    environment:
+      SERVICE_NAME: pro_8015
+      DB_HOST: db_pro_8015
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_DATABASE: pro
+    tty: true
+    command: python building_block_manager.py
+    restart: always
+    depends_on:
+      - db_pro_8015
+
+volumes:
+  psql-pro:
+    driver: local
+  catalogs_8015:
+    external:
+      name: volumes_catalogs_8015

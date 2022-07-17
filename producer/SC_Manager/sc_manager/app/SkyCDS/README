@@ -1,0 +1,34 @@
+ROBOT DOWNLOADER
+	//robot.jar tokenuser tokenapp cat ip min proportion
+	
+--example descarga	
+	
+ java -jar -Xms4g -Xmx4g Dw_ST.jar aa86181160af4f544c8b1863f75542811f1d981a  d3b37e31925d77c200bee84bab70486ff513b8d8 42f23c5ae9b6b145ca8487b15231421e20350a4b 148.247.201.219/multi 2 1 ESA
+	
+ROBOT UPLOADER
+	//robotuploader tokenuser tokenapp cat_id disperse desti minutes folder org		
+
+--example carga
+
+ java -jar -Xms1g -Xmx1g Up_ST.jar aa86181160af4f544c8b1863f75542811f1d981a  d3b37e31925d77c200bee84bab70486ff513b8d8 42ca550e4cb507572873112c8479d96c3c0acdbc  single bob 2 uploads LTI false
+
+
+CONFIG PARAMS
+
+
+1 fkeyring
+2 pass
+3 priv key
+4 attributes
+5 policies
+6 gateway
+
+
+--example
+bob.keyring
+bob123
+katya.abe.priv.ciph
+"grp:101"
+"grp:101"
+148.247.201.219/multi
+Dispersal

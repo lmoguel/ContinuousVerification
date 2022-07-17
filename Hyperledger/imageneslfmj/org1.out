@@ -1,0 +1,8 @@
+nohup: no se tendrá en cuenta la entrada
+Servidor Iniciado
+Peticion para /getAllImages recibida.
+Recibido trozo POST '{"id":"IMAGE3554965222","newO":"yo organization","newL":"yo level","newBbDes":"yo building block description","newTranId":"yo transaction","newConId":"yo content","fileName":"yo file name","newS":"yo estatus","newPrevious_hash":"yo previous hash","newActual_hash":"yo new actual hash","newTimestamp":"yo time stamp"}'.
+A punto de rutear una peticion para /getAllImages
+Wallet path: /home/fernando/Escritorio/Prototipo_Febrero/Hyperledger_Fabric/fabric-samples/imageneslfmj/wallet
+Transaction has been evaluated, result is: []
+[]

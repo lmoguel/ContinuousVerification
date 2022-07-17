@@ -1,0 +1,24 @@
+psycopg2
+flask>=1.0.3
+flask_restful>=0.3.5
+flask_json
+flask-wtf
+json2html
+gevent
+requests>=2.22.0
+argparse>=1.4.0
+pyyaml>=4.2
+graphviz>=0.12
+pycryptodome>=3.4.3
+numpy>=1.18
+scipy>=1.2.1
+simplejson # has problems with py-3.8-slim
+setuptools
+django
+numpy
+spicy
+matplotlib
+ipython
+jupyter
+pandas
+sympy

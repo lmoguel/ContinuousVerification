@@ -1,0 +1,5 @@
+FROM postgres
+
+ADD ./sc_db.sql /docker-entrypoint-initdb.d/sc_db.sql
+
+VOLUME psql-sc:/var/lib/postgresql/data

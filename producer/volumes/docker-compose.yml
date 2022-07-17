@@ -1,0 +1,4 @@
+version: '3'
+
+volumes:
+    catalogs_8015:

@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Cinvestav</title>
+      {% else %}
+      <title>Centro de Investigación y de Estudios Avanzados del IPN</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Cinvestav: <a href="/contract_deal">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

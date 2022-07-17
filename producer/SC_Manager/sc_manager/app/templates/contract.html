@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Make a contract</h1>
+    <form action="/request_contract" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ip.label }}<br>
+            {{ form.ip(size=80, default="") }}
+        </p>
+        <p>
+            {{ form.port.label }}<br>
+            {{ form.port(size=80, default="") }}
+        </p>
+        <p>
+            {{ form.bb_id.label }}<br>
+            {{ form.bb_id(size=80, default="") }}
+        </p>
+        <p>
+            {{ form.folder_path.label }}<br>
+            {{ form.folder_path(size=80, default="") }}
+        </p>
+
+
+        <p>
+            {{ form.remember_me() }} {{ form.remember_me.label }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

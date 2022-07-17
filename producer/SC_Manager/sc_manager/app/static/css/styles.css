@@ -1,0 +1,32 @@
+body{
+    background-color: #DAD2D8;
+}
+
+.container{
+    padding: 2%;
+    border-radius: 8px;
+    box-shadow: 4px 4px 14px 1px rgba(102, 102, 102, 1);
+}
+#main_container{
+    margin-top: 4%;
+    background-color: #ffffff;
+}
+
+#otro{
+    margin-top: 1%;
+    background-color: #fdfdfd7a;
+}
+
+#Verificationpage{
+    background-color: #037171;
+}
+
+.card-header{
+    background-color: #009383;
+    color: white;
+    text-align: center;
+}
+
+#boton_informacion{
+    background-color: #009383;
+}

@@ -1,0 +1,45 @@
+version: '3'
+services:
+  db_sc_8015:
+    image: postgres
+    ports:
+      - 8016:5432
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_DB: sc
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./database/sc_db.sql:/docker-entrypoint-initdb.d/sc_db.sql
+      - psql-sc:/var/lib/postgresql/data
+    restart: always
+  sc_manager_8015:
+    build:
+      context: ./sc_manager
+    ports:
+      - 8015:5000
+    volumes:
+      - catalogs_8015:/home/catalogs/
+      - ./sc_manager/app/:/home/
+    environment:
+      SERVICE_NAME: sc
+      DB_HOST: db_sc_8015
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_DATABASE: sc
+      HOST_IP: 192.168.0.4
+      HOST_PORT: 8015
+    tty: true
+    command: python supply_chain_manager.py
+    restart: always
+    depends_on:
+      - db_sc_8015
+
+volumes:
+  psql-sc:
+    driver: local
+  catalogs_8015:
+    external:
+      name: volumes_catalogs_8015

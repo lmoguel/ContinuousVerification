@@ -1,0 +1,8 @@
+numpy
+scipy==1.1.0
+imageio
+matplotlib
+ipython
+jupyter
+pandas
+sympy
